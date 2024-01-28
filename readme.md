@@ -10,7 +10,13 @@ linuxda indirip yada var olan araçların bash komutları ile kullanılarak yap�
 # Ag Tarayıcı </br>
 pip install scapy
 
-
 # Veri Analizi </br>
 pip3 install scapy-http
 www.meb.k12.tr -> bilerek açıkları olan web sitesi
+
+# Whatsapp Bot </br>
+chrome üzerinden eskry for chrome eklentisini ekliyoruz.
+firefox kurmamış gerek bide
+firefox driver for selenium github dan geckodriver indiriyoruz.
+pip install selenium
+bir gmail hesabı açıyoruz ve hesap güvenliği kısmından daha az güvenli uygulama erişimini açmamız gerek. whatsapp botumuz için.
