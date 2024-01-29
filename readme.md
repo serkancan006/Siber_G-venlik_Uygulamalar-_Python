@@ -53,7 +53,7 @@ menü kısmı -> komutların kullanımı.
 # Instagram Bot </br>
 chropath eklentisini chrome a kuruyoruz. hangi özelliklerin tek oldugunu kullanılabileceğini gösterir.
 pip install pyautogui
-
+xpath leri giridkten sonra çalıştır. eğer program hata verirse time.sleep() içindeki degerleri arttır.
 
 
 
