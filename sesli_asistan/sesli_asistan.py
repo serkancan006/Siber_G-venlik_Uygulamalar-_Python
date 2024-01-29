@@ -32,11 +32,13 @@ def konusma(metin):
 
 
 def yanıt(ses):
-    if "merhaba" in ses:
-        konusma("sanada merhaba dostum")
-    if "çıkış" in ses:
-        konusma("çıkış yapılıyor.")
-        quit()
+    if "linea" in ses:
+        print("seni algıladım.")
+        if "merhaba" in ses:
+            konusma("sanada merhaba dostum")
+        if "çıkış" in ses:
+            konusma("çıkış yapılıyor.")
+            quit()
 
 konusma("Merhaba Serkan.")
 print("Başlatıldı...")
