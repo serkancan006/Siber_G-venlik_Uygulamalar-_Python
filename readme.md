@@ -49,3 +49,11 @@ veya resim ve icon eklemek için normal truva araçları ile yapılabilir.
 eklenecekler:
 menü kısmı -> komutların kullanımı.
 
+
+# Instagram Bot </br>
+chropath eklentisini chrome a kuruyoruz. hangi özelliklerin tek oldugunu kullanılabileceğini gösterir.
+pip install pyautogui
+
+
+
+
