@@ -22,11 +22,21 @@ def dinleme(a=False):
 
         return ses
 
+
+def konusma(metin):
+    tts = gTTS(text=metin, lang="tr", slow=False)
+    ses = "konusma.mp3"
+    tts.save(ses)
+    playsound("konusma.mp3")
+    os.remove(ses)
+
+
+
 print("sistem açıldı.")
 ses = dinleme()
 
 print(ses)
-
+konusma(ses)
 
 
 
