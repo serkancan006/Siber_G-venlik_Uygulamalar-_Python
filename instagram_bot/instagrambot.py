@@ -9,17 +9,24 @@ Hos Geldiniz!
 
 2) Begeni
 
+3) Yorum
 
 """)
 secim = input("Giriniz: ")
 takipkontrol = 0
 begenikontrol = 0
+yorumkontrol = 0
 if secim=="1":
     ad = input("Kullanıcı adı giriniz: ")
-    takipkontrol=1
+    takipkontrol = 1
 elif secim=="2":
-    link = input("begenilecek gonderi linkini griniz: ")
-    begenikontrol=1
+    link = input("begenilecek gonderi linkini giriniz: ")
+    begenikontrol = 1
+elif secim=="3":
+    link = input("yorum atılacak gönderi linkini giriniz: ")
+    yorum = input("atılacak yorumu giriniz: ")
+    yorumkontrol = 1
+
 
 path = "c:\\Users\efsan\OneDrive\Masaüstü\İnstagrambot\geckodriver.exe"
 browser = webdriver.Firefox(executable_path=path)
@@ -42,8 +49,16 @@ if takipkontrol==1:
     browser.get(link)
     time.sleep(2)
     browser.find_element_by_xpath("xpath_begeni_button").click()
+if yorumkontrol==1:
+    browser.get(link)
+    time.sleep(2)
+    browser.find_element_by_xpath("yorum_yap_icon_xpath").click()
+    time.sleep(1)
+    browser.find_element_by_xpath("yorum_yap_formu_xpath").send_keys(yorum)
+    time.sleep(1)
+    browser.find_element_by_xpath("yorum_paylas_xpath").click()
 
-time.sleep(10)
+time.sleep(5)
 
 browser.get('https://www.instagram.com/battaldenemebot1/')
 time.sleep(1)
