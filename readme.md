@@ -61,4 +61,7 @@ pip install playsound
 pip install gTTS
 pyaudio kütüphanesi yükleyemezseniz .txt dosyasını indir. ve python prject dosyasının oldugu klasörün içine at ve pip install pyaudio yap.
 
-
+# EK </br>
+giriş
+bilgilendirme
+3-4-5-7-8-11 bölüm izle
