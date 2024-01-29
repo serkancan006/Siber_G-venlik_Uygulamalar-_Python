@@ -20,3 +20,8 @@ firefox kurmamış gerek bide
 firefox driver for selenium github dan geckodriver indiriyoruz.
 pip install selenium
 bir gmail hesabı açıyoruz ve hesap güvenliği kısmından daha az güvenli uygulama erişimini açmamız gerek. whatsapp botumuz için.
+
+# Keyloger </br>
+pip install pynput
+
+
