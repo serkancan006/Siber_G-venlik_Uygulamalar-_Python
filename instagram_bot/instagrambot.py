@@ -13,10 +13,13 @@ Hos Geldiniz!
 """)
 secim = input("Giriniz: ")
 takipkontrol = 0
+begenikontrol = 0
 if secim=="1":
     ad = input("Kullanıcı adı giriniz: ")
     takipkontrol=1
-
+elif secim=="2":
+    link = input("begenilecek gonderi linkini griniz: ")
+    begenikontrol=1
 
 path = "c:\\Users\efsan\OneDrive\Masaüstü\İnstagrambot\geckodriver.exe"
 browser = webdriver.Firefox(executable_path=path)
@@ -35,6 +38,10 @@ if takipkontrol==1:
     browser.get("https://www.intagram.com/"+ad)
     time.sleep(2)
     browser.find_element_by_xpath("xpath_takip_et").click()
+if takipkontrol==1:
+    browser.get(link)
+    time.sleep(2)
+    browser.find_element_by_xpath("xpath_begeni_button").click()
 
 time.sleep(10)
 
