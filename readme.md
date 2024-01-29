@@ -24,4 +24,10 @@ bir gmail hesabı açıyoruz ve hesap güvenliği kısmından daha az güvenli u
 # Keyloger </br>
 pip install pynput
 
+# Trojan </br>
+test etkmek için hede makineyi bilgisayarımızdan dinlememiz gerek bunun için nc -l -p 888 yapabiliriz.veya dinleyici.py çalıştır.
+
+
+
+
 
