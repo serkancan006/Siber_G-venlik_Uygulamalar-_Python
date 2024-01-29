@@ -28,7 +28,8 @@ pip install pynput
 test etkmek için hede makineyi bilgisayarımızdan dinlememiz gerek bunun için nc -l -p 888 yapabiliriz.veya dinleyici.py çalıştır.
 paketleme
 pip install simplejson
-
+dosyalar arasi gezinmek için
+cd ve cd path(örn cd ..)
 
 
 
