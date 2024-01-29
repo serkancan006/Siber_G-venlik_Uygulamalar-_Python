@@ -31,12 +31,22 @@ def konusma(metin):
     os.remove(ses)
 
 
+def yanıt(ses):
+    if "merhaba" in ses:
+        konusma("sanada merhaba dostum")
+    if "çıkış" in ses:
+        konusma("çıkış yapılıyor.")
+        quit()
 
-print("sistem açıldı.")
-ses = dinleme()
+konusma("Merhaba Serkan.")
+print("Başlatıldı...")
 
-print(ses)
-konusma(ses)
+while True:
 
+    ses = dinleme()
+    if bool(ses)==True:
+        print(ses)
+        ses = ses.lower()
+        yanıt(ses)
 
 
