@@ -55,5 +55,10 @@ chropath eklentisini chrome a kuruyoruz. hangi özelliklerin tek oldugunu kullan
 pip install pyautogui
 xpath leri giridkten sonra çalıştır. eğer program hata verirse time.sleep() içindeki degerleri arttır.
 
+# Sesli Asistan </br>
+yapay zeka kullanmadan hazır kütüphaneler ile yaoılmıştır. yani ses işleme yok sadece ögretilmiş model google a ait kullanılacaktır.
+pip install playsound
+pip install gTTS
+pyaudio kütüphanesi yükleyemezseniz .txt dosyasını indir. ve python prject dosyasının oldugu klasörün içine at ve pip install pyaudio yap.
 
 
